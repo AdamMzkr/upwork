@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+
+      .price-grid {
+      display: flex;
+      }
+       .input-value-slider {
+      font-size: 18px;
+      }
+      .input-value {
+      font-size: 14px;
+    font-weight: 500;
+      }
+      .price {
+      font-size: 0.6em;
+    font-weight: 400;
+    margin-right: 5px;
+      }
+      .grid-price {
+        display: grid;
+        grid-gap: 2px !important;
+        grid-template-columns: repeat(4, 0.18fr);
+       
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      label {
+        text-align: center;
+      }
+      /* css style*/
+    .main-container{
+      display:flex;
+      justify-content: center;
+      align-items:center;
+      width:100%;
+      height:100vh;
+      color:#4D4A48;
+      font-family:Verdana, Geneva, Tahoma, sans-serif
+    }
+    .container{
+      width:36rem;
+      padding:2rem 4rem;
+      background:#ECEAE7;
+      border-radius:0.5rem;
+    }
+
+ /*range slider*/
+
+  /*generated with Input range slider CSS style generator (version 20211225)
+https://toughengineer.github.io/demo/slider-styler*/
+input[type=range].styled-slider {
+  width:100%;
+  -webkit-appearance: none;
+  background:#ECEAE7;
+}
+
+/*progress support*/
+input[type=range].styled-slider.slider-progress {
+  --range: calc(var(--max) - var(--min));
+  --ratio: calc((var(--value) - var(--min)) / var(--range));
+  --sx: calc(0.5 * 2.5em + var(--ratio) * (100% - 2.5em));
+  margin:1.5rem 0rem;
+}
+
+input[type=range].styled-slider:focus {
+  outline: none;
+}
+
+/*webkit*/
+input[type=range].styled-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 2em;
+  background: #F87A00;
+  border: none;
+  box-shadow: none;
+  margin-top: calc(1.5em * 0.5 - 2.5em * 0.5);
+}
+
+input[type=range].styled-slider::-webkit-slider-runnable-track {
+  height: 1.5em;
+  border: none;
+  border-radius: 1em;
+  background: #DAD8D9;
+  box-shadow: none;
+}
+
+input[type=range].styled-slider::-webkit-slider-thumb:hover {
+  background: #F87A00;
+}
+
+input[type=range].styled-slider:hover::-webkit-slider-runnable-track {
+  background: #D1D1D1;
+}
+
+input[type=range].styled-slider::-webkit-slider-thumb:active {
+  background: #F87A00;
+}
+
+input[type=range].styled-slider:active::-webkit-slider-runnable-track {
+  background: #D1D1D1;
+}
+
+input[type=range].styled-slider.slider-progress::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, #F5E79F, #FC8551) 0/var(--sx) 100% no-repeat, #DAD8D9;
+}
+
+input[type=range].styled-slider.slider-progress:hover::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, #F5E79F,#FC8551) 0/var(--sx) 100% no-repeat, #D1D1D1;
+}
+
+input[type=range].styled-slider.slider-progress:active::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, #F5E79F, #FC8551) 0/var(--sx) 100% no-repeat, #D1D1D1;
+}
+
+/*mozilla*/
+input[type=range].styled-slider::-moz-range-thumb {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 2em;
+  background: #F87A00;
+  border: none;
+  box-shadow: none;
+}
+
+input[type=range].styled-slider::-moz-range-track {
+  height: 1.5em;
+  border: none;
+  border-radius: 0.5em;
+  background: #DAD8D9;
+  box-shadow: none;
+}
+
+input[type=range].styled-slider::-moz-range-thumb:hover {
+  background: #F87A00;
+}
+
+input[type=range].styled-slider:hover::-moz-range-track {
+  background: #D1D1D1;
+}
+
+input[type=range].styled-slider::-moz-range-thumb:active {
+  background: #F87A00;
+}
+
+input[type=range].styled-slider:active::-moz-range-track {
+  background: #D1D1D1;
+}
+
+input[type=range].styled-slider.slider-progress::-moz-range-track {
+  background: linear-gradient(to right, #F5E79F, #FC8551) 0/var(--sx) 100% no-repeat, #DAD8D9;
+}
+
+input[type=range].styled-slider.slider-progress:hover::-moz-range-track {
+  background: linear-gradient(to right, #F5E79F,#FC8551) 0/var(--sx) 100% no-repeat, #D1D1D1;
+}
+
+input[type=range].styled-slider.slider-progress:active::-moz-range-track {
+  background: linear-gradient(to right, #F5E79F, #FC8551) 0/var(--sx) 100% no-repeat, #D1D1D1;
+}
+
+/*ms*/
+input[type=range].styled-slider::-ms-fill-upper {
+  background: transparent;
+  border-color: transparent;
+}
+
+input[type=range].styled-slider::-ms-fill-lower {
+  background: transparent;
+  border-color: transparent;
+}
+
+input[type=range].styled-slider::-ms-thumb {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 2em;
+  background: #F87A00;
+  border: none;
+  box-shadow: none;
+  margin-top: 0;
+  box-sizing: border-box;
+}
+
+input[type=range].styled-slider::-ms-track {
+  height: 1.5em;
+  border-radius: 0.5em;
+  background: #DAD8D9;
+  border: none;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+input[type=range].styled-slider::-ms-thumb:hover {
+  background: #F87A00;
+}
+
+input[type=range].styled-slider:hover::-ms-track {
+  background: #D1D1D1;
+}
+
+input[type=range].styled-slider::-ms-thumb:active {
+  background: #F87A00;
+}
+
+input[type=range].styled-slider:active::-ms-track {
+  background: #D1D1D1;
+}
+
+input[type=range].styled-slider.slider-progress::-ms-fill-lower {
+  height: 1.5em;
+  border-radius: 0.5em 0 0 0.5em;
+  margin: -undefined 0 -undefined -undefined;
+  background: linear-gradient(to right, #F5E79F, #FC8551);
+  border: none;
+  border-right-width: 0;
+}
+
+input[type=range].styled-slider.slider-progress:hover::-ms-fill-lower {
+  background: linear-gradient(to right, #F5E79F,#FC8551);
+}
+
+input[type=range].styled-slider.slider-progress:active::-ms-fill-lower {
+  background: linear-gradient(to right, #F5E79F, #FC8551);
+}
+.grid-price{
+  position:relative;
+}
+/* Hide the browser's default radio button */
+.grid-price input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+/* Create a custom radio button */
+.grid-price .checkmark {
+  top: 0;
+  left: 0;
+  height: 2rem;
+  width: 2rem;
+  background-color: #ccc;
+  border-radius: 50%;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+/* On mouse-over, add a grey background color */
+.grid-price :hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.grid-price  input:checked ~ .checkmark {
+  background:linear-gradient(to right, #F5E79F,#FC8551);
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.grid-price  input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.grid-price  .checkmark:after {
+	width: 1.25rem;
+	height: 1.25rem;
+	border-radius: 50%;
+	background: white;
+}
+
+
+
+ </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="container">
+    <div class="range">
+      <input class="styled-slider slider-progress"  type="range" min="500" max="5000" step="500" value="1500" id="rangeSlider">
+      <br>
+      <output class='input-value-slider' id="sliderValue">1500</output>
+    </div>
+
+    <div class="grid-price">
+      <label>
+        <input type="radio" name="timePeriod" value="3" checked>  
+        <span class="checkmark"></span>
+        <span class='input-value'>3 mesi</span>
+      </label>
+      <label>
+        <input type="radio" name="timePeriod" value="6"> 
+        <span class="checkmark"></span>
+        <span class='input-value'>6 mesi</span>
+      </label>
+      <label>
+        <input type="radio" name="timePeriod" value="9">  
+        <span class="checkmark"></span>
+        <span class='input-value'>9 mesi</span>
+      </label>
+      <label>
+        <input type="radio" name="timePeriod" value="12"> 
+        <span class="checkmark"></span>
+        <span class='input-value'>12 mesi</span>
+      </label>
+    </div>
+
+    <p class='price' id="monthlyPayment">Pagamento mensile:</p>
+    <div class='price-grid'>
+    <p class='price' id="reducedMonthlyPayment">Costo del prestito:</p>
+    <p class='price' id="TAEG">TAEG:</p>
+    </div>
+  </div>
+</div>
+    
+  </body>
+  <script>
+    const rangeSlider = document.getElementById("rangeSlider");
+    const sliderValue = document.getElementById("sliderValue");
+    const monthlyPayment = document.getElementById("monthlyPayment");
+    const reducedMonthlyPayment = document.getElementById("reducedMonthlyPayment");
+    const TAEG = document.getElementById("TAEG");
+
+    rangeSlider.addEventListener("input", updateValues);
+    document.querySelectorAll("input[name=timePeriod]").forEach(input => {
+      input.addEventListener("change", updateValues);
+    });
+
+    function updateValues() {
+      sliderValue.innerHTML = rangeSlider.value + "€";
+      const selectedTimePeriod = Array.from(document.querySelectorAll("input[name=timePeriod]")).find(input => input.checked).value;
+      const costPerMonth = rangeSlider.value / selectedTimePeriod;
+      monthlyPayment.innerHTML = `Pagamento mensile: ${costPerMonth.toFixed(1)}€`;
+      const reducedCostPerMonth = costPerMonth / 2;
+      reducedMonthlyPayment.innerHTML = `Costo del prestito: ${reducedCostPerMonth.toFixed(1)}€`;
+      TAEG.innerHTML = `TAEG: ${(rangeSlider.value / 100).toFixed(2)}%`;
+    }
+    
+    updateValues();
+
+    for (let e of document.querySelectorAll('input[type="range"].slider-progress')) {
+  e.style.setProperty('--value', e.value);
+  e.style.setProperty('--min', e.min == '' ? '0' : e.min);
+  e.style.setProperty('--max', e.max == '' ? '100' : e.max);
+  e.addEventListener('input', () => e.style.setProperty('--value', e.value));
+}
+  </script>
+</html>
